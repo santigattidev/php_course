@@ -12,7 +12,7 @@ Para agregar comentarios utilizamos //, # o /* */.
 El codigo de php no se puede ver desde el navegador.
 
 ## Variables
-Definimos una variable utilizando $nombre_de_variable=valor. Los strings pueden ser encerradas entre '', utilizamos estas comillas siempre que no querramos llamar variables dentro del string o "" cuando si. Si utilizamos '' y queremos llamar variables debemos utilizar concatenaciones de strings y variables tal que 'str'+var+'str'. La forma más segura siempre será utilizando ''
+Definimos una variable utilizando $nombre_de_variable=valor. Los strings pueden ser encerradas entre '', utilizamos estas comillas siempre que no querramos llamar variables dentro del string o "" cuando si. Si utilizamos '' y queremos llamar variables debemos utilizar concatenaciones de strings y variables tal que 'str' . var . 'str' (el '.' concatena en PHP). La forma más segura siempre será utilizando ''
 
 Los double son numeros con decimales, el Null es cuando a una variable no se le ha asignado un valor.
 
@@ -26,3 +26,16 @@ Las constantes se establecen con la función define('NOMBRE_DE_CONSTANTE', valor
 Las constantes son variables globales
 
     Es buena practica definir las constantes con el nombre en mayúscula
+
+## Arreglo indexado
+Formas de almacenar varios valores en una variable utilizando $nombre_de_variable = array(valores separados por ',') o tambien podemos usar [] como en Python. Acá puede entrar cualquier otro valor
+
+para acceder a un valor del array indexado usamos $nombre_de_variable[posición numeríca]
+
+para agregar o superponer valores utilizamos $nombre_de_variable[posición numeríca] = nuevo_valor
+
+## Arreglo asociativo
+
+Esta es la forma de acceder a los valores por medio de un valor asociado en lugar de por su indexación utilizando nuevamente $nombre_de_variable = array(valor_asociado => valor, . . .)
+
+Podemos acceder a estos valores utilizando $nombre_de_variable[valor_asociado]
