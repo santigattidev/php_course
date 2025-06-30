@@ -39,3 +39,17 @@ para agregar o superponer valores utilizamos $nombre_de_variable[posición numer
 Esta es la forma de acceder a los valores por medio de un valor asociado en lugar de por su indexación utilizando nuevamente $nombre_de_variable = array(valor_asociado => valor, . . .)
 
 Podemos acceder a estos valores utilizando $nombre_de_variable[valor_asociado]
+
+## Arreglo multidimensional
+
+Consiste en armar arrays dentro de arrays 
+
+Por ejemplo si tenemos $nombre_de_variable=array(array(valores),...,array(valores)) podemos acceder a esta información filtrando en orden nombre_de_variable[Index][Index].
+
+Para hacerlo más entendible vamos a separar en lineas cada array, mirar
+
+## Contar el numero de elementos de un array (count())
+
+Utilizamos la función count(arreglo) para que nos retorne el numero de valores que tenemos dentro de un arreglo.
+
+Si nosotros quisieramos ingresar al ultimo elemento de un array tendremos que utilizar nombre_de_variable[count($nombre_de_variable) - 1]
