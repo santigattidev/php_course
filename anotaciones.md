@@ -49,7 +49,11 @@ Por ejemplo si tenemos $nombre_de_variable=array(array(valores),...,array(valore
 Para hacerlo más entendible vamos a separar en lineas cada array, mirar
 
 ## Contar el numero de elementos de un array (count())
-
 Utilizamos la función count(arreglo) para que nos retorne el numero de valores que tenemos dentro de un arreglo.
 
 Si nosotros quisieramos ingresar al ultimo elemento de un array tendremos que utilizar nombre_de_variable[count($nombre_de_variable) - 1]
+
+## Ciclo foreach()
+Recorrer arrays, si nosotros quisieramos mostrar valor por valor dentro de \<li>'s independientes en un archivo html deberíamos incluir un codigo php encerrado en varias etiquetas \<li\> distintas tal que 
+
+\<li\>\<?php echo ?nombre_de_array[0]>\</li\>  \<li\>\<?php echo ?nombre_de_array[0]>\</li\>
