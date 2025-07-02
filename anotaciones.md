@@ -56,4 +56,28 @@ Si nosotros quisieramos ingresar al ultimo elemento de un array tendremos que ut
 ## Ciclo foreach()
 Recorrer arrays, si nosotros quisieramos mostrar valor por valor dentro de \<li>'s independientes en un archivo html deberíamos incluir un codigo php encerrado en varias etiquetas \<li\> distintas tal que 
 
-\<li\>\<?php echo ?nombre_de_array[0]>\</li\>  \<li\>\<?php echo ?nombre_de_array[0]>\</li\>
+$$
+<li>\ <?php\ echo\ \$nombre\_de\_array[0]>\ \  </li> \\
+
+... \\
+
+<li>\ <?php\ echo\ \$nombre\_de\_array[n]>\ \ </li>
+$$
+
+y esto claramente se hace engorroso para arrays muy largos, por lo cual podemos iterar una fracción de codigo deseada. En PHP usaremos $ foreach(\$nombre\_de\_array\ as\ \$nombre\_singular\_descriptivo\_de\_los\_valores\_del\_array) \{función\ a\ ejecutar\ para\ cada\ valor\ del\ array\}$.
+
+En este ej dado anteriormente cada vez que se itere $ \$nombre\_descriptivo $ tomará un nuevo valor más adelante en el array 
+$$ \{echo\ '<li>'.\ \$nombre\_descriptivo\ .\ ' </li>'\}$$
+nos dará todos los elementos del array enlistados en el html.
+
+## Ordenar arreglos
+Contaremos con una función para ordenar arrays, el caso de arrays con str los ordena alfabeticamente y en el caso de arrays con numeros numericamente de mayor a menor o viceversa.
+
+Esta función $sort(\$nombre\_de\_array)$ ordena de menor a mayor y $rsort(\$nombre\_de\_array)$ ordenará al revés.
+
+## Condicional if
+$if(condición)\{instrucción\}$, la condición (booleano) y los operadores se escribe de igual forma que en Python.
+
+Si por ejemplo utilizamos el operador ! seguido de una variable definida $(!\$nombre\_de\_variable)$, esto querrá decir que el codigo se ejecutará si $nombre_de_variable no está definida
+
+Podemos trabajar con más de una condición utilizando operadores lógicos, $\&\&$ nos permitirá 
