@@ -128,9 +128,7 @@ $$condición\ ?\ instrucción : instrucción\_en\_caso\_contrario$$
 Nos permite repetir bloques de codigo cuantas veces necesitemos.
 
 
-$$
-\texttt{for(\$variable\_index;\ condición\_index;\ incremento\_index)\ \{instrucción\}}
-$$
+$\texttt{for(\$variable\_index;\ condición\_index;\ incremento\_index)\ \{instrucción\}}$
 
 por ejemplo dentro del parentesis podriamos poner $\text{(i = 1; i} \leq \text{10; i++)}$, esto lo que hará es establecer el index i=1 y por cada iteración se le sumará 1 a i mientras que i sea igual o menor a 10, podemos utilizar estas iteraciones para repetir la instrucción que queramos.
 
