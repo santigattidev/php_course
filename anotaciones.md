@@ -81,7 +81,7 @@ $if(condición)\{instrucción\}$, la condición (booleano) y los operadores se e
 
 Si por ejemplo utilizamos el operador ! seguido de una variable definida $(!\$nombre\_de\_variable)$, esto querrá decir que el codigo se ejecutará si $nombre_de_variable no está definida
 
-Podemos trabajar con más de una condición utilizando operadores lógicos, $\&\&$ nos permitirá concatenar más de una condición a cumplir para que se ejecute la instrucción if(condición1 $\&\&$ condición2){instrucción}
+Podemos trabajar con más de una condición utilizando operadores lógicos, && nos permitirá concatenar más de una condición a cumplir para que se ejecute la instrucción $if(condición1$ && $condición2)\{instrucción\}$
 
 ## Sentencia else y else if
 Primero que nada el agregar if dentro de if's se lo conoce como anidar condicionales
@@ -95,18 +95,18 @@ las básicas +,-,*,/ que ni hace falta explicar que hacen. También junto a esto
 ### Operadores de asignación
 Nos permiten hacer operaciones y guardar el valor resultante en la variable de la izquierda, tenemos =, +=, -=, *=, /=. Ya sabemos nuevamente que hace cada uno.
 
-Ej: $\ var_1$+=$var_2$ $\rarr$ $var_1 = var_1$+$var_2$
+Ej: $\ var_1$+=$var_2$ $ \rarr$ $var_1 = var_1$+$var_2$
 
 ### Operadores de comparación
 Utilizados más que nada en condicionales, retornan valores booleanos dependiendo si $var_1$ cumple con la condición del operador de comparación respecto a $var_2$. Los operadores de comparación son == [Si $var_1$ y $var_2$ son iguales], === [verifica si ambos valores son identicos, es decir que tengan el mismo valor y sean el mismo tipo de dato (si $var_1$ y $var_2$ fueran un dato str y un dato int, por más de que seán el mismo número, nos retornará false por el tipo de dato a diferencia de ==)], != [también escrito como <>], !==, >, <, >=, <=.
 
 ### Operadores lógicos
-Estas agregan condiciones a un condicional, están $\&\&$ [and], **||** [or], $xor$ [Verifica que solo una de las 2 condiciones se cumpla (o $var_1$ o $var_2$)]
+Estas agregan condiciones a un condicional, están && [and], **||** [or], $xor$ [Verifica que solo una de las 2 condiciones se cumpla (o $var_1$ o $var_2$)]
 
 ### Operadores de incremento y decremento
 Agregarán unidades de una en una a la variable especificada. Existen $++\$x$, $\$x++$, $--\$x$, $\$x--$ [La diferencia entre los ++ o -- detrás o adelante es que operación se ejecuta primero].
 
-Por ejemplo: Si hacemos  echo $\$var_1$++ nos mostrará $var_1$ en pantalla sin la suma de la únidad. En cambio echo ++$\$var_1$ nos mostrará $var_1$+1 como salida por que la suma se efectuó antes del echo.
+Por ejemplo: Si hacemos  echo $ \$var_1$++ nos mostrará $var_1$ en pantalla sin la suma de la únidad. En cambio echo ++$ \$var_1$ nos mostrará $var_1$+1 como salida por que la suma se efectuó antes del echo.
 
 ### Operadores de Cadenas
 Operadores que nos permiten concatenar, tenemos . [añadir $var_2$ delante de $var_1$] y .= [mismo proceso pero reemplaza $var_1$ por $var_2$, funciona como un operador de asignación pero para strings]
@@ -125,7 +125,7 @@ Ahora si, el shorthand if se hace utilizando
 $$condición\ ?\ instrucción : instrucción\_en\_caso\_contrario$$
 
 ## Ciclo for
-Nos permite repetir bloques de codigo cuantas veces necesitemos. $$for(\$variable\_index\ ;\ condición\_respecto\_index\ ;\ incremento\_index) \{ \\instrucción\}$$
+Nos permite repetir bloques de codigo cuantas veces necesitemos. $$for(\$variable\_index\ ;\ condición\_respecto\_index\ ;\ incremento\_index) \{ \\ instrucción\}$$
 por ejemplo dentro del parentesis podriamos poner $(i=1, i<=10, i$++$)$, esto lo que hará es establecer el index i=1 y por cada iteración se le sumará 1 a i mientras que i sea igual o menor a 10, podemos utilizar estas iteraciones para repetir la instrucción que queramos.
 
 ## Ciclo while
