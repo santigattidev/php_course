@@ -95,7 +95,7 @@ las básicas +,-,*,/ que ni hace falta explicar que hacen. También junto a esto
 ### Operadores de asignación
 Nos permiten hacer operaciones y guardar el valor resultante en la variable de la izquierda, tenemos =, +=, -=, *=, /=. Ya sabemos nuevamente que hace cada uno.
 
-Ej: $\ var_1$+=$var_2$ $ \rightarrow $ $var_1 = var_1$+$var_2$
+Ej: $\ var_1$+=$var_2$ $\rightarrow$ $var_1 = var_1$+$var_2$
 
 ### Operadores de comparación
 Utilizados más que nada en condicionales, retornan valores booleanos dependiendo si $var_1$ cumple con la condición del operador de comparación respecto a $var_2$. Los operadores de comparación son == [Si $var_1$ y $var_2$ son iguales], === [verifica si ambos valores son identicos, es decir que tengan el mismo valor y sean el mismo tipo de dato (si $var_1$ y $var_2$ fueran un dato str y un dato int, por más de que seán el mismo número, nos retornará false por el tipo de dato a diferencia de ==)], != [también escrito como <>], !==, >, <, >=, <=.
