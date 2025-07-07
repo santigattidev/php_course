@@ -158,3 +158,32 @@ foreach( \$datos as \$dato) {echo \$dato}
 
 imprimirá 'Nombre' en pantalla, para acceder a Juan debemos utilizar un puntero más:
 foreach( \$datos as $dato=>\$Nombre) {echo \$Nombre}
+
+## Sentencia break y continue
+Nos permiten manipular las iteraciones de un ciclo con estas dos sentencias.
+
+Al recorrer un array por ejemplo con foreach(array as unidad) {instrucción} dentro de las instrucciónes si estipulamos un if(unidad = item dentro_del_array) {break;} entonces en este punto, el array dejará de recorrerse sin importar si no terminó.
+
+De igual forma continue en lugar de frenar toda la iteración completa, lo que hará será saltar a la siguiente iteración directamente.
+
+## Función var_dump()
+Se utiliza para conocer el tipo de la variable electa, propiedades y su valor.
+
+Por ejemplo de si usamos var_dump('hola') nos devolvera string(4) "hola" que en ordén es tipo de dato, cantidad de digitos y valor de variable. Si lo hacemos con un 10 nos devuelve int(10), su tipo y el valor. Si usamos la función con un array var_dump(array('Carlos','Pepe')) nos retornará array(2){[0]=> string(6) "Carlos" [1]=> string(4) "Pepe"} que en orden nuevamente es tipo de dato, cuantos indices hay dentro del array, \{numero de indice=> tipo de dato(cantidad de digitos) valor\} y esto ultimo se repite por la cantidad de veces que hayan indices (en este ejemplo debería haber sido 2 veces).
+
+Para que esta información sea más legible en el navegador podemos darle click derecho $ \rarr $ ver codigo fuente de la página.
+
+O si queremos mostrarlo en página como se muestra en el codigo fuente podemos encerrarlo entre las etiquetas html "\<pre>"
+
+En un arreglo asociativo nos mostrará igual que en el array indexado pero en lugar de la posición del indice la clave seteada.
+
+Esta función también importante nos deja ver el valor de un booleano (si true o false)
+
+## Función print_r()
+Es muy parecido a var_dump() pero más legible, con información más entendible para el humano. El problema es que solo nos devuelve el valor en el caso de los strings y los numeros, con los que se nos podría mezclar cual es cual.
+
+Es muy útil para los arrays, nos dará unicamente la información del tipo de dato (Array) y cada indice númerico apuntando al valor que le corresponde: Array([0]=> "Jose", [1]=> "Juan") por ejemplo.
+
+Para los array asociativos será similar.
+
+El problema con esta función radica también en los booleanos, true retorna 1 y false no retorna nada visible en pantalla
