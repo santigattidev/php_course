@@ -128,7 +128,7 @@ $$condición\ ?\ instrucción : instrucción\_en\_caso\_contrario$$
 Nos permite repetir bloques de codigo cuantas veces necesitemos.
 
 
-$\text{for (\$variable\_index;\ condición\_index;\ incremento\_index)\ \{instrucción\}}$
+for ($variable_index; condición_index; incremento_index) {instrucción}
 
 por ejemplo dentro del parentesis podriamos poner $\text{(i = 1; i} \leq \text{10; i++)}$, esto lo que hará es establecer el index i=1 y por cada iteración se le sumará 1 a i mientras que i sea igual o menor a 10, podemos utilizar estas iteraciones para repetir la instrucción que queramos.
 
@@ -148,6 +148,13 @@ $do\{instrucción\}\ while(condición)$
 ## Ciclo foreach
 Retomando el ciclo foreach, supongamos que tenemos un array asociativo, si intentamos acceder al valor del array como antes accederemos a la clave del array en lugar del valor.
 
-Por ejemplo tenemos el array con un solo valor (para hacerlo más fácil) $$ \$datos=(\ 'Nombre'=>\ 'Juan'\ ) $$
-Si intentamos acceder a este valor utilizando $ foreach( \$datos\ as\ \$dato)\ \{echo\ \$dato\} $ imprimirá 'Nombre' en pantalla, para acceder a Juan debemos utilizar un puntero más:
-$ foreach( \$datos\ as\ \$dato=>\$Nombre)\ \{echo\ \$Nombre\} $
+Por ejemplo tenemos el array con un solo valor (para hacerlo más fácil)
+
+\$datos=( 'Nombre'=> 'Juan')
+
+Si intentamos acceder a este valor utilizando
+
+foreach( \$datos as \$dato) {echo \$dato}
+
+imprimirá 'Nombre' en pantalla, para acceder a Juan debemos utilizar un puntero más:
+foreach( \$datos as $dato=>\$Nombre) {echo \$Nombre}
