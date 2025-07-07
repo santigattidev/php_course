@@ -30,9 +30,9 @@ Las constantes son variables globales
 ## Arreglo indexado
 Formas de almacenar varios valores en una variable utilizando $nombre_de_variable = array(valores separados por ',') o tambien podemos usar [] como en Python. Acá puede entrar cualquier otro valor
 
-para acceder a un valor del array indexado usamos $nombre_de_variable[posición numeríca]
+para acceder a un valor del array indexado usamos $ \$nombre\_de\_variable[posición\ numeríca]$
 
-para agregar o superponer valores utilizamos $nombre_de_variable[posición numeríca] = nuevo_valor
+para agregar o superponer valores utilizamos $ \$nombre\_de\_variable[posición\ numeríca] = nuevo\_valor $
 
 ## Arreglo asociativo
 
@@ -64,7 +64,8 @@ $$
 <li>\ <?php\ echo\ \$nombre\_de\_array[n]>\ \ </li>
 $$
 
-y esto claramente se hace engorroso para arrays muy largos, por lo cual podemos iterar una fracción de codigo deseada. En PHP usaremos $ foreach(\$nombre\_de\_array\ as\ \$nombre\_singular\_descriptivo\_de\_los\_valores\_del\_array) \{función\ a\ ejecutar\ para\ cada\ valor\ del\ array\}$.
+y esto claramente se hace engorroso para arrays muy largos, por lo cual podemos iterar una fracción de codigo deseada. En PHP usaremos $$ foreach(\$nombre\_de\_array\ as\ \$nombre\_singular\_descriptivo\_de\_los\_valores\_del\_array) \\
+\{función\ a\ ejecutar\ para\ cada\ valor\ del\ array\}$$
 
 En este ej dado anteriormente cada vez que se itere $ \$nombre\_descriptivo $ tomará un nuevo valor más adelante en el array 
 $$ \{echo\ '<li>'.\ \$nombre\_descriptivo\ .\ ' </li>'\}$$
@@ -116,3 +117,33 @@ Una estructura que nos sirve de forma similar a los condicionales. Se utiliza co
 Podemos sumar más de un caso dentro del switch, pero es importante que pongamos break al final de cada case por que si no no se frenará el switch y seguirá buscando
 
 Hay un case más que es el default, el cual se ejecuta si los casos anteriores no fueron el caso.
+
+## Shorthand if - Condicional corto
+Acá se introduce a isset($variable), función que nos indica si una variable está definida o no (nada es que no y 1 es que si).
+
+Ahora si, el shorthand if se hace utilizando 
+$$condición\ ?\ instrucción : instrucción\_en\_caso\_contrario$$
+
+## Ciclo for
+Nos permite repetir bloques de codigo cuantas veces necesitemos. $$for(\$variable\_index\ ;\ condición\_respecto\_index\ ;\ incremento\_index) \{ \\instrucción\}$$
+por ejemplo dentro del parentesis podriamos poner $(i=1, i<=10, i$++$)$, esto lo que hará es establecer el index i=1 y por cada iteración se le sumará 1 a i mientras que i sea igual o menor a 10, podemos utilizar estas iteraciones para repetir la instrucción que queramos.
+
+## Ciclo while
+$while(1\ sola\ condición)\{instrucción\}$
+
+## Recorrer arreglos con for y while
+$for\ (\$i = 0 ; \$i < count(\$array) ; i++)\ \{instrucción\ con\ array[i]\}$
+
+Lo que aseguramos con esto es: con count tendremos el tope de iteraciones dinamico y dependiente del array, i se irá aumentando iteración por iteración hasta llegar a este y podremos llamar al array númericamente con este valor.
+
+## Ciclo dowhile
+El ciclo dowhile es igual al while solo que se invierte el ordén, primero se ejecuta la instrucción y luego se corroborá que la condición que cumpla. Entonces la instrucción siempre se ejecuta como mínimo 1 vez.
+
+$do\{instrucción\}\ while(condición)$
+
+## Ciclo foreach
+Retomando el ciclo foreach, supongamos que tenemos un array asociativo, si intentamos acceder al valor del array como antes accederemos a la clave del array en lugar del valor.
+
+Por ejemplo tenemos el array con un solo valor (para hacerlo más fácil) $$ \$datos=(\ 'Nombre'=>\ 'Juan'\ ) $$
+Si intentamos acceder a este valor utilizando $ foreach( \$datos\ as\ \$dato)\ \{echo\ \$dato\} $ imprimirá 'Nombre' en pantalla, para acceder a Juan debemos utilizar un puntero más:
+$ foreach( \$datos\ as\ \$dato=>\$Nombre)\ \{echo\ \$Nombre\} $

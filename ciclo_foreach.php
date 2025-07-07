@@ -16,6 +16,15 @@ $meses = array(
     
 );
 
+$datos = array(
+    array("nombre" => "John",
+    "edad" => 30,
+    "profesion" => "Developer"),
+    array("nombre" => "Jane",
+    "edad" => 25,
+    "profesion" => "Designer")
+);
+
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +39,18 @@ $meses = array(
     <?php
     foreach ($meses as $mes):
       echo "<li>" . $mes . " - " . $mes . "</li>";
+    endforeach;
+    ?>
+    <h2>Meses del Año con =></h2>
+    <?php
+    foreach ($meses as $mes => $mes):
+      echo "<li>" . $mes . "</li>";
+    endforeach;
+    ?>
+    <h2>Datos con =></h2>
+    <?php
+    foreach ($datos as $dato):
+      echo "<li>" . $dato["nombre"] . " - " . $dato["edad"] . " - " . $dato["profesion"] . "</li>";
     endforeach;
     ?>
   </ul>
