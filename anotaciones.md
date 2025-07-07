@@ -127,7 +127,8 @@ $$condición\ ?\ instrucción : instrucción\_en\_caso\_contrario$$
 ## Ciclo for
 Nos permite repetir bloques de codigo cuantas veces necesitemos.
 
-$$\texttt{for(\$variable\_index;\ condición\_respecto\_index;\ incremento\_index)\ \{instrucción\}}$$
+$$\text{for(\$variable\_index;\ condición\_respecto\_index;\ incremento\_index)\ \{instrucción\}}$$
+
 
 
 por ejemplo dentro del parentesis podriamos poner $(i=1, i<=10, i$++$)$, esto lo que hará es establecer el index i=1 y por cada iteración se le sumará 1 a i mientras que i sea igual o menor a 10, podemos utilizar estas iteraciones para repetir la instrucción que queramos.
