@@ -128,7 +128,7 @@ $$condición\ ?\ instrucción : instrucción\_en\_caso\_contrario$$
 Nos permite repetir bloques de codigo cuantas veces necesitemos.
 
 $$
-for(\$variable\_index\ ;\ condición\_respecto\_index\ ;\ incremento\_index) \{\\
+for(\$variable \_index\ ;\ condición \_respecto \_index\ ;\ incremento \_index) \{\\
 instrucción\}
 $$
 
