@@ -187,3 +187,34 @@ Es muy útil para los arrays, nos dará unicamente la información del tipo de d
 Para los array asociativos será similar.
 
 El problema con esta función radica también en los booleanos, true retorna 1 y false no retorna nada visible en pantalla
+
+## Funciones
+Un bloque de codigo que podemos programar para ejecutar cuantas veces queramos y donde nosotros queramos con un solo bloque de codigo.
+
+Para armar una función utilizamos function nombre_de_función(parametros a usar dentro de las instrucciones){instrucciones}
+
+## Sentencia return
+Una sentencia muy importante, más aún cuando estamos trabajando con funciones. return nos permite regresar el resultado a la función llamada misma. Con esto si guardamos en una variable una función que utiliza return adentro tendremos que la variable será igual al valor retornado por la función.
+
+Unicamente se puede retornar un valor por función.
+
+Intentar siempre utilizar las funciones para manejar información y que no muestre nada en pantalla.
+
+## Funciones para cadenas de texto
+- htmlspecialchars(str) $ \rarr $ convierte caracteres especiales en entidades html (por ejemplo > en html es \gt, < \lt y & &amp). Esto sirve para la seguridad de la página mas que nada, que los usarios no puedan inyectar codigo, hace que los caracteres especiales queden inutilizados de afuera.
+- trim(str) $ \rarr $ elimina todos los espacios en blanco al inicio y al final de un string.
+- strlen(str) $ \rarr $ calcula el tamaño de un string.
+- substr(str, int, int) $ \rarr $ nos retorna un pedazo del str que se le pasa, el 2do parametro es de donde va a empezar a cortar los caracteres y el 3er parametro es cuantos espacios hacia adelante.
+- strtoupper(str) $ \rarr $ Convierte todo el str a mayúscula
+- strtolower(str) $ \rarr $ Convierte todo el str a minúscula
+- strpos(str, str) $ \rarr $ Nos averigua en que posición se encuentra la letra del segundo parametro
+
+## Funciones para arreglos
+- extract(array) $ \rarr $ Nos permite agarrar las claves de un array asociativo y convertirlos en variables existentes fuera del array (por ejemplo si tenemos extract(array(telefono => 1298210))) podríamos llamar a $telefono y utilizar el valor ya conocido por fuera del array.
+- array.pop(array) $ \rarr $ elimina el ultimo elemento de un array y lo retorna (osea que lo podemos guardar en una variable al mismo tiempo que lo eliminamos)
+- join(str, array) $ \rarr $ nos muestra el array del 2do parametro como str pero con cada elemento de este espaciado por el str del 1er parametro.
+- count(array) $ \rarr $ Nos permite conocer cuantos elementos tiene el array.
+- sort(array) $ \rarr $ organiza en forma ascendente al array.
+- rsort(array) $ \rarr $ organiza en forma descendente al array.
+- array_reverse(array) $ \rarr $ invierte los elementos del arreglo.
+
