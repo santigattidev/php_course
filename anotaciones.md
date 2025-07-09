@@ -218,3 +218,9 @@ Intentar siempre utilizar las funciones para manejar información y que no muest
 - rsort(array) $ \rarr $ organiza en forma descendente al array.
 - array_reverse(array) $ \rarr $ invierte los elementos del arreglo.
 
+## Funciones matemáticas
+- round(flood, int) $ \rarr $ redondea un numero flood a su int más cercano en caso de no aclarar su 2do parametro (hasta el digito 4 redondea hacia abajo y de 5 para arriba redondea al techo). Si se aclara el 2do parametro redondeará de la misma forma pero a los decimales especificados, por ejemplo round(3.145, 2) = 3.15
+- rand(int, int) $ \rarr $ Nos devuelve un número entero al azar que se encuentre entre los 2 parametros especificados
+- ceil(flood) $ \rarr $ redondea un numero decimal hacía arriba
+- M_PI $ \rarr $ Esto no es una función pero igual se incluye por su relación con el resto del apartado. M_PI es una constante incluida en php y es el número PI
+
