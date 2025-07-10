@@ -216,11 +216,54 @@ Intentar siempre utilizar las funciones para manejar información y que no muest
 - count(array) $ \rarr $ Nos permite conocer cuantos elementos tiene el array.
 - sort(array) $ \rarr $ organiza en forma ascendente al array.
 - rsort(array) $ \rarr $ organiza en forma descendente al array.
+- usort(array, 'función') $ \rarr $ ordena el arreglo del primer parametro en base a la función comparativa del segundo que se debe pasar el nombre como string (esta función debe comparar dos elementos, en donde se tiene que cumplir la misma regla de signos que en el operador de nave espacial ubicado debajo del todo)
 - array_reverse(array) $ \rarr $ invierte los elementos del arreglo.
+- implode(str, array) $ \rarr $ hace lo mismo que join
 
 ## Funciones matemáticas
 - round(flood, int) $ \rarr $ redondea un numero flood a su int más cercano en caso de no aclarar su 2do parametro (hasta el digito 4 redondea hacia abajo y de 5 para arriba redondea al techo). Si se aclara el 2do parametro redondeará de la misma forma pero a los decimales especificados, por ejemplo round(3.145, 2) = 3.15
 - rand(int, int) $ \rarr $ Nos devuelve un número entero al azar que se encuentre entre los 2 parametros especificados
 - ceil(flood) $ \rarr $ redondea un numero decimal hacía arriba
 - M_PI $ \rarr $ Esto no es una función pero igual se incluye por su relación con el resto del apartado. M_PI es una constante incluida en php y es el número PI
+
+## Scope en el lenguaje de PHP
+Donde podemos acceder a las variables y donde no
+
+Una función no puede acceder a una variable que esté fuera de ella y viceversa
+
+Existen las variables globales y locales, las globales son las que se encuentran definidas fuera de funciones, para estas variables trabajarlas localmente dentro de funciones deberíamos pasarselas como parametro función($variable_global){echo $variable_global} y para acceder a una variable local de una función tenemos que retornar la variable y directamente hacer echo función().
+
+## Include y Require
+Incluir archivos dentro de otros para tener el código más organizado.
+
+Utilizamos ***include*** *string*, donde *string* es la localización de otro archivo, para usar todo el código del archivo seleccionado en el código siendo trabajado actualmente (tener en cuenta que aunque no veamos el código, es como si estuviera copiado y pegado tal cual en este) y nos serviría por ejemplo si definimos funciones y queremos utilizarlas en otro archivo.
+
+***require*** *string* es para exactamente lo mismo con la diferencia de que si nos equivocamos de ruta nos marca un Fatal error (el resto de la página no se mostrará) y el otro nos marca un Warning únicamente (ejecutará el resto de la página).
+
+Podemos utilizar include cuando sabemos que el contenido del archivo no es tan importante (sin conexiones a base de datos o sin amenazas a la seguridad) y require cuando si o si necesitamos del otro archivo.
+
+Si utilizamos ***require_once*** *string* o ***include_once*** *string* haremos lo mismo pero nos aseguraremos de que solo se cargue una vez el código por más que lo repitamos.
+
+## Función die()
+La función nos permite parar la ejecución de la página por completo, el resto del código por debajo de la función no se ejecutará.
+
+## php 7
+### phpinfo()
+phpinfo() $ \rarr $ Si creamos un archivo solamente con esta función y entramos a esta ubicación desde el navegador nos abrirá una página con los detalles de la versión de php que se está utilizando
+
+### Declaraciones de tipo escalar
+Ahora hay una forma de obligar al usuario a pasar un tipo de dato en particular (o más bien evitar que pase el contrario) con las declaraciones de tipo escalar. En lugar de tener que poner una sentencia if para esto podemos ubicar detrás de una variable (la cual definirá el usuario) una declaración de tipo escalar.
+
+Por ejemplo función(*int* int){instrucción}. Acá el primer int no es un argumento, está modificando al argumento de adelante para que solo acepte números enteros, en caso de poner otro tipo de dato nos dará un fatal error. Ahora llegado al caso de que se ingresa un numero entero como string php convertirá este string a entero y el código funcionará normalmente.
+
+Para obligar a que el argumento sea un tipo de dato especifico podemos poner la función declare(strict_type=1) al principio del código y así php no intentará convertir código de un tipo a otro.
+
+### Declaraciones de tipo devolución
+
+Es lo mismo que las anteriores declaraciones pero ahora para especificar que tipo de dato queremos retornar, lo hacemos de la siguiente manera: function nombre() : int{instrucción}, le agregamos los dos puntos y el tipo de dato previo a los braces.
+
+
+### Operador de nave espacial
+
+*int* ***<=>*** *int* es una forma de comparar, retornara 1 si el valor de la izquierda es mayor al de la derecha, retornara -1 en caso contrario y 0 si ambos valores son iguales.
 
