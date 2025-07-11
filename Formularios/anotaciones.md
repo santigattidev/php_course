@@ -19,4 +19,19 @@ El primer method que miraremos será el POST: primero que nada, recordemos que a
 
 Para ingresar a este array utilizamos $_POST y el atributo name dado será la clave de cada valor del array
 
-Podemos hacer que
+Podemos hacer que, en caso de que el usuario intente ingresar a la URL de action sin rellenar y apretar enviar en el formulario (no existirá $_POST), se le redireccione a otra página distinta utilizando justamente if($_POST){instrucción} else {header('Location:URL')}
+
+Este metodo nos envía los datos del formulario por detrás, la única manera de saber los datos que ingresamos en el formulario luego de envíarlo es si hay código PHP en el back que muestre los datos, esto es todo lo contrario con el metodo GET
+
+Con el metodo POST podemos enviar archivos, cuando queremos mostrar información importante y que no queremos que el usuario pueda manipular.
+
+## Metodo GET
+Se envían los datos por medio de la URL (Query strings) asimilando la sintaxis de un array, luego de la url original se ubica '?' y cada dato está separado por '&' *URL?clave=valor&clave=valor*
+
+Para recibirlo es de igual forma que con el metodo POST haciendo $_GET con la diferencia de que la información esta a la vista del usuario y puede modificarla modificando el la URL.
+
+Solo utilizaremos este metodo para cuando queremos traer información y mostrarla debido a su poca seguridad ya que el usuario puede inyectar etiquetas html, codigo php y javascript.
+
+Hay una función que podemos utilizar para que no nos inyecten código que ya se había comentado la cual es htmlspecialchars(valor_GET)
+
+Podriamos utilizar el mismo if para redirigir la página en caso de no contar con un dato GET
