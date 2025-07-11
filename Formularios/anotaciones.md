@@ -19,7 +19,7 @@ El primer method que miraremos será el POST: primero que nada, recordemos que a
 
 Para ingresar a este array utilizamos $_POST y el atributo name dado será la clave de cada valor del array
 
-Podemos hacer que, en caso de que el usuario intente ingresar a la URL de action sin rellenar y apretar enviar en el formulario (no existirá $_POST), se le redireccione a otra página distinta utilizando justamente if($_POST){instrucción} else {header('Location:URL')}
+Podemos hacer que, en caso de que el usuario intente ingresar a la URL de action sin rellenar y apretar enviar en el formulario (no existirá \$_POST), se le redireccione a otra página distinta utilizando justamente if(\$_POST){instrucción} else {header('Location:URL')}
 
 Este metodo nos envía los datos del formulario por detrás, la única manera de saber los datos que ingresamos en el formulario luego de envíarlo es si hay código PHP en el back que muestre los datos, esto es todo lo contrario con el metodo GET
 
