@@ -171,7 +171,7 @@ Se utiliza para conocer el tipo de la variable electa, propiedades y su valor.
 
 Por ejemplo de si usamos var_dump('hola') nos devolvera string(4) "hola" que en ordén es tipo de dato, cantidad de digitos y valor de variable. Si lo hacemos con un 10 nos devuelve int(10), su tipo y el valor. Si usamos la función con un array var_dump(array('Carlos','Pepe')) nos retornará array(2){[0]=> string(6) "Carlos" [1]=> string(4) "Pepe"} que en orden nuevamente es tipo de dato, cuantos indices hay dentro del array, \{numero de indice=> tipo de dato(cantidad de digitos) valor\} y esto ultimo se repite por la cantidad de veces que hayan indices (en este ejemplo debería haber sido 2 veces).
 
-Para que esta información sea más legible en el navegador podemos darle click derecho $ \rarr $ ver codigo fuente de la página.
+Para que esta información sea más legible en el navegador podemos darle click derecho $ \to $ ver codigo fuente de la página.
 
 O si queremos mostrarlo en página como se muestra en el codigo fuente podemos encerrarlo entre las etiquetas html "\<pre>"
 
@@ -201,30 +201,30 @@ Unicamente se puede retornar un valor por función.
 Intentar siempre utilizar las funciones para manejar información y que no muestre nada en pantalla.
 
 ## Funciones para cadenas de texto
-- htmlspecialchars(str) $ \rarr $ convierte caracteres especiales en entidades html (por ejemplo > en html es \gt, < \lt y & &amp). Esto sirve para la seguridad de la página mas que nada, que los usarios no puedan inyectar codigo, hace que los caracteres especiales queden inutilizados de afuera.
-- trim(str) $ \rarr $ elimina todos los espacios en blanco al inicio y al final de un string.
-- strlen(str) $ \rarr $ calcula el tamaño de un string.
-- substr(str, int, int) $ \rarr $ nos retorna un pedazo del str que se le pasa, el 2do parametro es de donde va a empezar a cortar los caracteres y el 3er parametro es cuantos espacios hacia adelante.
-- strtoupper(str) $ \rarr $ Convierte todo el str a mayúscula
-- strtolower(str) $ \rarr $ Convierte todo el str a minúscula
-- strpos(str, str) $ \rarr $ Nos averigua en que posición se encuentra la letra del segundo parametro
+- htmlspecialchars(str) $ \to $ convierte caracteres especiales en entidades html (por ejemplo > en html es \gt, < \lt y & &amp). Esto sirve para la seguridad de la página mas que nada, que los usarios no puedan inyectar codigo, hace que los caracteres especiales queden inutilizados de afuera.
+- trim(str) $ \to $ elimina todos los espacios en blanco al inicio y al final de un string.
+- strlen(str) $ \to $ calcula el tamaño de un string.
+- substr(str, int, int) $ \to $ nos retorna un pedazo del str que se le pasa, el 2do parametro es de donde va a empezar a cortar los caracteres y el 3er parametro es cuantos espacios hacia adelante.
+- strtoupper(str) $ \to $ Convierte todo el str a mayúscula
+- strtolower(str) $ \to $ Convierte todo el str a minúscula
+- strpos(str, str) $ \to $ Nos averigua en que posición se encuentra la letra del segundo parametro
 
 ## Funciones para arreglos
-- extract(array) $ \rarr $ Nos permite agarrar las claves de un array asociativo y convertirlos en variables existentes fuera del array (por ejemplo si tenemos extract(array(telefono => 1298210))) podríamos llamar a $telefono y utilizar el valor ya conocido por fuera del array.
-- array.pop(array) $ \rarr $ elimina el ultimo elemento de un array y lo retorna (osea que lo podemos guardar en una variable al mismo tiempo que lo eliminamos)
-- join(str, array) $ \rarr $ nos muestra el array del 2do parametro como str pero con cada elemento de este espaciado por el str del 1er parametro.
-- count(array) $ \rarr $ Nos permite conocer cuantos elementos tiene el array.
-- sort(array) $ \rarr $ organiza en forma ascendente al array.
-- rsort(array) $ \rarr $ organiza en forma descendente al array.
-- usort(array, 'función') $ \rarr $ ordena el arreglo del primer parametro en base a la función comparativa del segundo que se debe pasar el nombre como string (esta función debe comparar dos elementos, en donde se tiene que cumplir la misma regla de signos que en el operador de nave espacial ubicado debajo del todo)
-- array_reverse(array) $ \rarr $ invierte los elementos del arreglo.
-- implode(str, array) $ \rarr $ hace lo mismo que join
+- extract(array) $ \to $ Nos permite agarrar las claves de un array asociativo y convertirlos en variables existentes fuera del array (por ejemplo si tenemos extract(array(telefono => 1298210))) podríamos llamar a $telefono y utilizar el valor ya conocido por fuera del array.
+- array.pop(array) $ \to $ elimina el ultimo elemento de un array y lo retorna (osea que lo podemos guardar en una variable al mismo tiempo que lo eliminamos)
+- join(str, array) $ \to $ nos muestra el array del 2do parametro como str pero con cada elemento de este espaciado por el str del 1er parametro.
+- count(array) $ \to $ Nos permite conocer cuantos elementos tiene el array.
+- sort(array) $ \to $ organiza en forma ascendente al array.
+- rsort(array) $ \to $ organiza en forma descendente al array.
+- usort(array, 'función') $ \to $ ordena el arreglo del primer parametro en base a la función comparativa del segundo que se debe pasar el nombre como string (esta función debe comparar dos elementos, en donde se tiene que cumplir la misma regla de signos que en el operador de nave espacial ubicado debajo del todo)
+- array_reverse(array) $ \to $ invierte los elementos del arreglo.
+- implode(str, array) $ \to $ hace lo mismo que join
 
 ## Funciones matemáticas
-- round(flood, int) $ \rarr $ redondea un numero flood a su int más cercano en caso de no aclarar su 2do parametro (hasta el digito 4 redondea hacia abajo y de 5 para arriba redondea al techo). Si se aclara el 2do parametro redondeará de la misma forma pero a los decimales especificados, por ejemplo round(3.145, 2) = 3.15
-- rand(int, int) $ \rarr $ Nos devuelve un número entero al azar que se encuentre entre los 2 parametros especificados
-- ceil(flood) $ \rarr $ redondea un numero decimal hacía arriba
-- M_PI $ \rarr $ Esto no es una función pero igual se incluye por su relación con el resto del apartado. M_PI es una constante incluida en php y es el número PI
+- round(flood, int) $ \to $ redondea un numero flood a su int más cercano en caso de no aclarar su 2do parametro (hasta el digito 4 redondea hacia abajo y de 5 para arriba redondea al techo). Si se aclara el 2do parametro redondeará de la misma forma pero a los decimales especificados, por ejemplo round(3.145, 2) = 3.15
+- rand(int, int) $ \to $ Nos devuelve un número entero al azar que se encuentre entre los 2 parametros especificados
+- ceil(flood) $ \to $ redondea un numero decimal hacía arriba
+- M_PI $ \to $ Esto no es una función pero igual se incluye por su relación con el resto del apartado. M_PI es una constante incluida en php y es el número PI
 
 ## Scope en el lenguaje de PHP
 Donde podemos acceder a las variables y donde no
@@ -249,7 +249,7 @@ La función nos permite parar la ejecución de la página por completo, el resto
 
 ## php 7
 ### phpinfo()
-phpinfo() $ \rarr $ Si creamos un archivo solamente con esta función y entramos a esta ubicación desde el navegador nos abrirá una página con los detalles de la versión de php que se está utilizando
+phpinfo() $ \to $ Si creamos un archivo solamente con esta función y entramos a esta ubicación desde el navegador nos abrirá una página con los detalles de la versión de php que se está utilizando
 
 ### Declaraciones de tipo escalar
 Ahora hay una forma de obligar al usuario a pasar un tipo de dato en particular (o más bien evitar que pase el contrario) con las declaraciones de tipo escalar. En lugar de tener que poner una sentencia if para esto podemos ubicar detrás de una variable (la cual definirá el usuario) una declaración de tipo escalar.
