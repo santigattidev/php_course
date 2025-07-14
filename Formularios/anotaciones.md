@@ -35,3 +35,42 @@ Solo utilizaremos este metodo para cuando queremos traer información y mostrarl
 Hay una función que podemos utilizar para que no nos inyecten código que ya se había comentado la cual es htmlspecialchars(valor_GET)
 
 Podriamos utilizar el mismo if para redirigir la página en caso de no contar con un dato GET
+
+## Enviar datos a la misma página
+Nos serviría por ejemplo para validar información en caso que queramos saber desde el back que campos fueron rellenados por el usuario
+
+Podemos envíar la info a la misma página ingresando la misma dirección siendo trabajada en action (esto se puede hacer de forma dinamica) y armando un apartado de código php fuera del fuera de las etiquetas \<html>
+
+Para ingresar a la ruta siendo trabajada de forma dinamica ingresaremos un poco de codigo php en las comillas del atributo action y adentro ingresaremos la variable global $_SERVER para traer el valor del script siendo ejecutado actualmente con htmlspecialchars($_SERVER['PHP_SELF']) y así traeremos la ruta actual del archivo que se está ejecutando (notemos que encerramos al valor con htmlspecialcharts para evitar inyecciones de código)
+
+## Comprobar si un formulario ha sido enviado
+Para corroborar si los datos de un formulario habían sido enviados con POST directamente teníamos que utilizar los condicionales con $_POST para corroborar si este array estaba definido.
+
+El problema con el metodo GET es que este array lo podemos definir fuera del formulario modificando la URL. Entonces si hacemos lo mismo no estamos verificando si completamos el formulario si no que si el array fue definido únicamente.
+
+Para esto enviaremos al usuario a otra página con el action en la cual el código php comprobará si se está recibiendo información por medio de POST o GET mediante la variable global \$_SERVER $ \to $ \$_SERVER['REQUEST_METHOD'] y esto nos retornará el metodo de envío como string
+
+Otra forma de corroborar esto es en base al name, corroborando en PHP if (isset($_POST[valor_del_name])){instrucción}.
+
+Cada uno de estos 2 metodos tiene su uso, el primero no corroborá por medio de que formulario se está enviando la info y el 2do si pero no evalúa por que metódo. Entonces si hay solo un formulario en pantalla mejor usar el primero metodo y si hay 2 o más usar el 2do
+
+## Validando un formulario
+Para esto redirigiremos con el action al mismo archivo con echo htmlspecialchars($_SERVER['PHP_SELF']) utilizamos el echo para que este código php sea visible en el código fuente de la página y que el action la pueda detectar (recordemos que php normalmente no es visible en el código)
+
+Con esto luego vamos a verificar que se le hayan pasado valores al array con un if en el php del mismo archivo.
+
+Acá van a haber dos cosas que necesitamos ver: 1 $ \to $ Que no se pasen los valores como vacíos, esto lo hacemos con un condicional con la función empty(variable) el cual devuelve un bool dependiendo de si la variable tiene un valor. 2 $ \to $ No queremos que el usuario pueda inyectar código, entonces vamos a hacer htmlspecialchars a las variables. 3 $ \to $ Este es un poco opcional, si queremos ordenar los datos que pone el usuario podemos usar trim(variable) eliminando espacios al pedo y stripslashes($variable) para eliminar \\.
+
+Podemos recortar un poco el código de recién (para limpiar como se ve el texto) usando solo **filter_var(string, filter, array)**, donde el 1er parametro es el valor que queremos filtrar (realmente puede ser cualquier tipo de dato pero este se terminará convirtiendo en string), el 2do parametro es el valor reservado que define como queremos filtrar que empieza FILTER_..., por ejemplo FILTER_SANITIZE_STRING (el cual verifica que el valor no esté vacío, se modifican los caracteres especiales para que se muestren como texto html, elimina espacios y \\) y por último toma el valor opcional de un array para establecer valores minimos y maximos o flags (su sintaxis es ["options"=>["min_range"=>int, "max_range"=>int], "flags"=>FILTER]), los flags es como actuará con ciertos valores especificos, por ejemplo FILTER_NULL_ON_FAILURE devolverá el booleano en caso que pueda interpretarse y devolvera null si no.
+
+También utilizamos FILTER_SANITIZE_EMAIL luego junto a FILTER_VALIDATE_EMAIL en el filter_var() para filtrar el email y que tenga un formato apropiado.
+
+## Operador de fusión null
+Un operador (recordemos que estas son las comparaciones que devolvían true o false) el cual nos permite hacer la corroboración de si el GET fue envíado como cuando haciamos
+
+*condición ? instrucción : else_instrucción*
+
+Solo que ahora podemos utilizar
+
+**instrucción_true ?? else_false**, aplicandolo al GET sería $_GET[name] ?? 2da_opción
+
