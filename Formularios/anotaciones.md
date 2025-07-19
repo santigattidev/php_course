@@ -74,3 +74,9 @@ Solo que ahora podemos utilizar
 
 **instrucción_true ?? else_false**, aplicandolo al GET sería $_GET[name] ?? 2da_opción
 
+## Anotaciones de la práctica
+La parte lógica es todo lo mismo que vimos hasta ahora, un poco de css agregado.
+
+Cuando queremos que un formulario nos siga mostrando lo que escribimos antes de que nos tire error y no se envíe tenemos que utilizar php en el atributo value del html, en donde se verifique que si se envío un dato vía algún metodo (post o get) este haga un echo sobre el value.
+
+Para mandar un mail automatizado utilizamos mail **($enviar_a, $asunto, $mensaje)**
