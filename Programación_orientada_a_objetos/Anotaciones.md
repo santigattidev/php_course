@@ -22,3 +22,19 @@ El metodo constructor es el metodo que se ejecuta cada vez que instanciemos un o
 Dentro del construct le pasaremos la misma forma de definir las propiedades que habiamos visto anteriormente (que sabemos que ahora se ejecutará cada vez que se instancie un objeto) $this->$p_n$ = $p_n$, el segundo $p_n$ es el valor de parametro y esto lo repetimos para cada propiedad
 
 Ahora para definir cada propiedad en un objeto unicamente tendremos que instanciar un objeto y pasarle cada valor en ordén como parametro al nuevo objeto instanciado nombre_de_objeto = NombreDeClase($v_1$,...,$v_n$) donde cada $v$ es el valor del parametro en su lugar correspondiente.
+
+## Herencia
+Lo utilizamos para crear clases muy similares y que compartan propiedades y metodos entre clases. Para hacer esto únicamente debemos empezar a crear una clase y a la derecha del nombre de la clase escribir la palabra reservada extends NombreDeClase1, quedando **class NombreDeClase2 extends NombreDeClase1** y así le estamos pasando todas las propiedades y metodos de la clase 1 a la nueva clase 2.
+
+Para nosotros agregar otra propiedad a la nueva clase debemos sobreescribir el metodo construct pero para no escribir todo de nuevo y que quede el código engorroso utilizamos function __construct($p_1$,...,$p_n$,$p_m$) con los $p$ siendo las propiedades de la clase padre y $p_m$ la nueva propiedad unica de la nueva clase, dentro del construct escribimos primero **parent::__construct($p_1$,...,$p_n$)** y debajo **$this->$p_m$=$ $p_m$**, la primera linea del código llama al construct de la clase padre y lo pega tal cual, la segunda linea crea la nueva propiedad para la clase.
+
+## Scope en POO
+Los tipos de scope son public, private y protected. Son los tipos que tenemos nosotros para cambiar las propiedades y metodos
+- **public** $\to$ Cuando nosotros relacionamos propiedades escribiendo public al principio queremos decir que esta propiedad será accesible desde cualquier parte del código.
+- **protected** $\to$ La propiedad solo podrá ser accedida desde adentro de la clase y de otras clases que heredaron, esto significa si por ejemplo nosotros creamos una nueva clase heredada de la primera con propiedades protected y definimos un metodo que muestre una de estas propiedades en pantalla nos la devolverá correctamente.
+- **private** $\to$ Solo se puede acceder a la propiedad desde adentro de la clase que fue creada. El mismo caso ejemplificado en protected pero con propiedades de la clase 1 private nos dará error acá.
+
+## Clases abstractas
+Es una forma de proteger toda nuestra clase ubicando **abstract** detrás de la creación de una nueva clase. Lo que hace esto es que no nos permite acceder a una clase a menos que la heredemos, no podremos ni siquiera utilizar un metodo public que no utilice ninguna propiedad de la clase si no.
+
+## Palabra reservada Static
