@@ -38,3 +38,13 @@ Los tipos de scope son public, private y protected. Son los tipos que tenemos no
 Es una forma de proteger toda nuestra clase ubicando **abstract** detrás de la creación de una nueva clase. Lo que hace esto es que no nos permite acceder a una clase a menos que la heredemos, no podremos ni siquiera utilizar un metodo public que no utilice ninguna propiedad de la clase si no.
 
 ## Palabra reservada Static
+Una forma de acceder a propiedades y metodos sin necesidad de instanciar la clase (esta ya se tiene que encontrar definida dentro de la clase y con la palabra static delante del scope) utilizando **NombreDeClase::$propiedad o función dentro de la clase**. A las funciones se le puede pasar su respectivo parametro de esta forma.
+
+De paso en este bloque aprendimos que si escribimos una variable seteada dentro de los parametros al definir una función se le establece este valor por defecto en caso de que no se le pase el parametro, **public static function($variable = valor){instrucción}**
+
+Por regla general, está bueno darle a un dato la propiedad static cuando no es un dato único para cada objeto, si no que queremos que de alguna forma se comparta en la misma clase.
+
+## Cadenas de métodos
+Si tenemos muchos metodos dentro de un objeto y queremos ejecutar varios de estos a la vez se puede ver un poco engorroso el llamar al objeto y buscar el metodo especifico en cada linea de código, por eso tenemos otro metodo que consiste en solamente llamar una vez al código y de ahí en la misma linea poner todos los metodos a ejecutar:
+
+Primero debemos asegurarnos que los metodos que queremos ejecutar en la misma linea por fuera retornen this y luego ya podemos ejecutar por ejemplo 2 metodos haciendo **$nombre_de_objeto->metodo1()->metodo2()**
